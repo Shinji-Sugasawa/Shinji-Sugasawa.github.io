@@ -35,7 +35,7 @@ camera.lookAt(new THREE.Vector3(0, 0, -5));
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(10,10);
 //var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
-var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+var planeMaterial = new THREE.MeshPhongMaterial({ color: ffffff });
 var plane = new THREE.Mesh(planeGeometry,planeMaterial);
 plane.receiveShadow = true;
 plane.rotation.set( -Math.PI/2, 0, 0 );
