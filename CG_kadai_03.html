@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <title>CG_kadai_03</title>
 
-  <!-- three.jsを読み込む(ローカル) -->
-  <!-- <script src="./three.js"></script> -->
-  <!-- three.jsを読み込む(CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
 
 </head>
@@ -41,7 +38,7 @@ var planeGeometry = new THREE.PlaneGeometry(10,10);
 var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
 var plane = new THREE.Mesh(planeGeometry,planeMaterial);
 plane.receiveShadow = true;
-plane.rotation.set( -Math.PI/2, 0, 0 );
+//plane.rotation.set( -Math.PI/2, 0, 0 );
 plane.position.set(0,-1.5,-6);
 scene.add(plane);
 
