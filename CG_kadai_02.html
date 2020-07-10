@@ -152,7 +152,7 @@ scene.add( roof );
     penguin.add(body); // 体を追加
     penguin.add(Rhand); // 右手を追加  
     penguin.add(Lhand); // 左手を追加
-    penguin.position.set(-1.7,0);
+    penguin.position.set(-1.7,0,0);
    // penguin.castShadow = true;
     scene.add(penguin);
 
@@ -174,7 +174,7 @@ scene.add( roof );
 // 平行光源(色、強さ）主光源
 var directionalLightM = new THREE.DirectionalLight(0xffffff,0.3);
 directionalLightM.position.set(0, 10, -5);
-//directionalLightM.castShadow = true; 
+directionalLightM.castShadow = true; 
 //シーンに追加
 scene.add(directionalLightM);
 
@@ -198,7 +198,7 @@ directionalLightS.position.set(-1, -1, 1);
       requestAnimationFrame(update);
 
       //全体を回転
-      all.rotation.y += 0.01;
+     // all.rotation.y += 0.01;
 
       renderer.render(scene, camera);
     };
