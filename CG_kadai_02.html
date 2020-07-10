@@ -137,6 +137,7 @@ var coneGeometry = new THREE.ConeGeometry(2.2 , 0.8, 4 );
 //半径、高さ、底面の分割数
 var coneMaterial = new THREE. MeshPhongMaterial( {color: 0xff0000} );
 var roof = new THREE.Mesh( coneGeometry, coneMaterial );
+roof.castShadow = true; 
 roof.position.set( 1.3, 1.4, -2 );
 roof.rotation.y = 1.7;
 scene.add( roof );
@@ -153,7 +154,6 @@ scene.add( roof );
     penguin.add(Rhand); // 右手を追加  
     penguin.add(Lhand); // 左手を追加
     penguin.position.set(-1.7,0,0);
-    penguin.castShadow = true;
     scene.add(penguin);
 
 //全体のオブジェクト（家）
@@ -198,7 +198,7 @@ directionalLightS.position.set(-1, -1, 1);
       requestAnimationFrame(update);
 
       //全体を回転
-      all.rotation.y += 0.01;
+      //all.rotation.y += 0.01;
 
       renderer.render(scene, camera);
     };
