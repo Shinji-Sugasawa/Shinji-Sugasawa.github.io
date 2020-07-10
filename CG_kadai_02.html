@@ -153,6 +153,7 @@ scene.add( roof );
     penguin.add(Rhand); // 右手を追加  
     penguin.add(Lhand); // 左手を追加
     penguin.position.set(-1.7,0,0);
+    penguin.castShadow = true;
     scene.add(penguin);
 
 //全体のオブジェクト（家）
@@ -169,7 +170,7 @@ scene.add( roof );
     all.add(plane);
     all.position.set(0,0,-10);
     scene.add(all);
-    
+
 // 平行光源(色、強さ）主光源
 var directionalLightM = new THREE.DirectionalLight(0xffffff,0.3);
 directionalLightM.position.set(0, 10, -5);
