@@ -21,6 +21,8 @@
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height);
     document.body.appendChild(renderer.domElement);
+    // レンダラー：シャドウを有効にする
+    renderer.shadowMap.enabled = true;
   
     // シーンを作成
     var scene = new THREE.Scene();
@@ -151,6 +153,7 @@ scene.add( roof );
     penguin.add(Rhand); // 右手を追加  
     penguin.add(Lhand); // 左手を追加
     penguin.position.set(-1.7,0,0);
+    penguin.receiveShadow = true;
     scene.add(penguin);
 
 //全体のオブジェクト（家）
