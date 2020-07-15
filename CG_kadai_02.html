@@ -137,7 +137,7 @@ var texture = textureLoader.load("renga.jpeg");
 var mat = new THREE.MeshPhongMaterial();
 mat.map = texture;
 //屋根を作成
-var coneGeometry = new THREE.ConeGeometry(2.2 , 0.8, 4 ); 
+var coneGeometry = new THREE.ConeGeometry(2.2 , 1.0, 4 ); 
 //半径、高さ、底面の分割数
 //var coneMaterial = new THREE. MeshPhongMaterial( {color: 0xff0000} );
 var roof = new THREE.Mesh( coneGeometry, mat );
