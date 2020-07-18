@@ -27,16 +27,28 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
 
-        // マテリアルを作成する
-        const material = new THREE.SpriteMaterial({
+        // マテリアル1を作成する
+        const material1 = new THREE.SpriteMaterial({
+          map: new THREE.TextureLoader().load('snow1.png')
+        });
+        // フォグ（霞）を有効にする
+        material1.fog = true;
+
+        // マテリアルを2作成する
+        const material2 = new THREE.SpriteMaterial({
           map: new THREE.TextureLoader().load('snow2.png')
         });
         // フォグ（霞）を有効にする
-        material.fog = true;
+        material2.fog = true;
 
         // ビルボードを作成
         for (let i = 0; i < 3000; i++) {
-          const sprite = new THREE.Sprite(material);
+            if( i / 2 == 0){
+                const sprite = new THREE.Sprite(material1);
+                }else{
+                    const sprite = new THREE.Sprite(material2);
+                }
+          
           // ランダムな座標に配置
           sprite.position.x = 500 * (Math.random() - 0.5);
           sprite.position.y = 100 * Math.random() - 40;
