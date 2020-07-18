@@ -36,8 +36,7 @@
 
         // ビルボードを作成
         for (let i = 0; i < 3000; i++) {
-            if( i >= 0){const sprite = new THREE.Sprite(material);}
-          
+            const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
           sprite.position.x = 500 * (Math.random() - 0.5);
           sprite.position.y = 100 * Math.random() - 40;
