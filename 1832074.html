@@ -58,12 +58,15 @@
 
         // 毎フレーム時に実行されるループイベントです
         function tick() {
+
+          /*
           // カメラの自動移動
           camera.position.x = 100 * Math.sin(Date.now() / 2000);
           camera.position.z = 100 * Math.cos(Date.now() / 2000);
           camera.position.y = 50 * Math.sin(Date.now() / 1000) + 60;
           camera.lookAt(new THREE.Vector3(0, 0, 0));
-
+          */
+          
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
