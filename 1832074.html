@@ -27,6 +27,8 @@
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
+        // カメラの初期座標を設定
+        camera.position.set(0, 0, 1000);
 
         // マテリアル1を作成する
         const material = new THREE.SpriteMaterial({
@@ -66,7 +68,7 @@
           camera.position.y = 50 * Math.sin(Date.now() / 1000) + 60;
           camera.lookAt(new THREE.Vector3(0, 0, 0));
           */
-          
+
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
