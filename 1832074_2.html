@@ -27,26 +27,6 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
 
-
-        // マテリアルを作成する
-        const material = new THREE.SpriteMaterial({
-          map: new THREE.TextureLoader().load('snow1.png')
-        });
-        // フォグ（霞）を有効にする
-        material.fog = true;
-
-        // マテリアルを作成
-        const material = new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load('earthmap.jpg'),
-        side: THREE.DoubleSide
-        });
-         // 球体の形状を作成します
-         const geometry = new THREE.SphereGeometry(300, 30, 30);
-        // 形状とマテリアルからメッシュを作成します
-        const earthMesh = new THREE.Mesh(geometry, material);
-        // シーンにメッシュを追加します
-        scene.add(earthMesh);
-
         // ビルボードを作成
         for (let i = 0; i < 1000; i++) {
           const sprite = new THREE.Sprite(material);
