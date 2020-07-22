@@ -34,6 +34,30 @@
         var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         var box = new THREE.Mesh(geometry, material);
         scene.add(box);
+
+        //形状ジオメトリーを作る
+        const geometry = new THREE.Geometry();
+        
+        //配置する範囲
+        const SIZE = 3000;
+        //配置する個数
+        const LENGTH = 1000;
+        for(let i = 0; i < LENGTH; i++){
+          geometry.vertices.push(new THREE.Vector3(
+            SIZE * (Math.random() - 0.5),
+            SIZE * (Math.random() - 0.5),
+            SIZE * (Math.random() - 0.5),
+          ));
+        }
+        //マテリアルを作成
+        const material = new THREE.PointMaterial({
+          //1つ１つのサイズ
+          size: 10,
+          //色
+          color:0xFFFFFF,
+        })
+        const mesh = new THEREE.Points(gepmetry,material);
+        scene.add(mesh);
         
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
