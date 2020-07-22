@@ -25,7 +25,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
 
-        // マテリアルを作成する
+        /*// マテリアルを作成する
         const material = new THREE.SpriteMaterial({
           map: new THREE.TextureLoader().load('snow1.png')
         });
@@ -43,9 +43,9 @@
           sprite.scale.set(10, 10, 10);
 
           scene.add(sprite);
-        }
+        }*/
 
-       /* // 星屑を作成します (カメラの動きをわかりやすくするため)
+        // 星屑を作成します (カメラの動きをわかりやすくするため)
         createStarField();
 
         function createStarField() {
@@ -75,14 +75,14 @@
           // 物体を作成
           const mesh = new THREE.Points(geometry, material);
           scene.add(mesh);
-        }*/
+        }
 
         tick();
 
         // 毎フレーム時に実行されるループイベントです
         function tick() {
           //カメラの速さ
-          rot += 1;
+          rot += 0.5;
 
           // ラジアンに変換する
           const radian = (rot * Math.PI) / 180;
