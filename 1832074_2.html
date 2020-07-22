@@ -27,12 +27,12 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
 
-       /* // 箱を作成
+       // 箱を作成
         var geometry = new THREE.BoxGeometry(100, 100, 100);
         var material = new THREE.MeshPhongMaterial({ color: 0x0000ff});
         var box = new THREE.Mesh(geometry, material);
-       // box.position.set(-2,1.5,-7);
-        scene.add(box);*/
+        box.position.set(0,0,0);
+        scene.add(box);
 
         // マテリアルを作成する
         const material = new THREE.SpriteMaterial({
