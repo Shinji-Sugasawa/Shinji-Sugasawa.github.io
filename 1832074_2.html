@@ -25,7 +25,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
 
-        /*// マテリアルを作成する
+        // マテリアルを作成する
         const material = new THREE.SpriteMaterial({
           map: new THREE.TextureLoader().load('snow1.png')
         });
@@ -43,38 +43,6 @@
           sprite.scale.set(10, 10, 10);
 
           scene.add(sprite);
-        }*/
-
-        // 星屑を作成します (カメラの動きをわかりやすくするため)
-        createStarField();
-
-        function createStarField() {
-          // 形状データを作成
-          const geometry = new THREE.Geometry();
-          // 配置する範囲
-          const SIZE = 3000;
-          // 配置する個数
-          const LENGTH = 1000;
-          for (let i = 0; i < LENGTH; i++) {
-            geometry.vertices.push(
-              new THREE.Vector3(
-                SIZE * (Math.random() - 0.5),
-                SIZE * (Math.random() - 0.5),
-                SIZE * (Math.random() - 0.5)
-              )
-            );
-          }
-          // マテリアルを作成
-          const material = new THREE.PointsMaterial({
-            // 一つ一つのサイズ
-            size: 10,
-            // 色
-            color: 0xffffff
-          });
-
-          // 物体を作成
-          const mesh = new THREE.Points(geometry, material);
-          scene.add(mesh);
         }
 
         tick();
