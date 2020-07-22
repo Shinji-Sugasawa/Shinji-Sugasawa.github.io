@@ -25,7 +25,27 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
 
-        // 星屑を作成します (カメラの動きをわかりやすくするため)
+        // マテリアルを作成する
+        const material = new THREE.SpriteMaterial({
+          map: new THREE.TextureLoader().load('snow1.png')
+        });
+        // フォグ（霞）を有効にする
+        material.fog = true;
+
+        // ビルボードを作成
+        for (let i = 0; i < 1000; i++) {
+          const sprite = new THREE.Sprite(material);
+          // ランダムな座標に配置
+          sprite.position.x = 500 * (Math.random() - 0.5);
+          sprite.position.y = 100 * Math.random() - 40;
+          sprite.position.z = 500 * (Math.random() - 0.5);
+          // 必要に応じてスケールを調整
+          sprite.scale.set(10, 10, 10);
+
+          scene.add(sprite);
+        }
+
+       /* // 星屑を作成します (カメラの動きをわかりやすくするため)
         createStarField();
 
         function createStarField() {
@@ -55,7 +75,7 @@
           // 物体を作成
           const mesh = new THREE.Points(geometry, material);
           scene.add(mesh);
-        }
+        }*/
 
         tick();
 
