@@ -59,6 +59,14 @@
         plane.position.y = -40;
         scene.add(plane);
 
+        const floorgeometry = new THREE.PlaneGeometry( 7, 7, 7 );
+        const floormaterial = new THREE.MeshPhongMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
+        var floor = new THREE.Mesh( floorgeometry, floormaterial );
+        floor.position.y = -39; 
+        scene.add( floor );
+
+
+
         const sphereGeometry = new THREE.SphereGeometry( 10, 32, 32 ); 
         //半径、垂直方向の分割数、水平方向の分割数
         const sphereMaterial = new THREE. MeshPhongMaterial( {color: 0xFFFFFF} );
