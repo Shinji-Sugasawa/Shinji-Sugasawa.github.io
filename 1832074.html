@@ -2,10 +2,11 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
+    <title>期末課題</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
     <script>
-      <title>期末課題</title>
+  
       // ページの読み込みを待つ
       window.addEventListener('load', init);
 
@@ -64,6 +65,12 @@
         const head = new THREE.Mesh( sphereGeometry, sphereMaterial );
         head.position.set( 0, -30, 0 );
         scene.add( head );
+
+        // 平行光源1
+        const directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        directionalLight1.position.set(1, 1, 1);
+        // シーンに追加
+        scene.add(directionalLight1);
 
         tick();
 
