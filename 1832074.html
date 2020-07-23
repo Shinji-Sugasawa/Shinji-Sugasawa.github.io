@@ -59,7 +59,7 @@
         plane.position.y = -40;
         scene.add(plane);
 
-        const floorgeometry = new THREE.PlaneGeometry( 500, 1, 350 );
+        const floorgeometry = new THREE.PlaneGeometry( 500, 10, 1000 );
         const floormaterial = new THREE.MeshPhongMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
         const floor = new THREE.Mesh( floorgeometry, floormaterial );
         floor.position.y = -39; 
