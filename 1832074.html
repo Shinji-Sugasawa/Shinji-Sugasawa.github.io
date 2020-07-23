@@ -57,6 +57,13 @@
         plane.position.y = -40;
         scene.add(plane);
 
+        const sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
+        //半径、垂直方向の分割数、水平方向の分割数
+        const sphereMaterial = new THREE. MeshStandardMaterial( {color: 0x999999} );
+        const head = new THREE.Mesh( sphereGeometry, sphereMaterial );
+        head.position.set( 0, -40, 0 );
+        scene.add( head );
+
         tick();
 
         // 毎フレーム時に実行されるループイベントです
