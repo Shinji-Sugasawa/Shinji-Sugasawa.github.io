@@ -48,7 +48,7 @@
           sprite.position.y = 100 * Math.random() - 40;
           sprite.position.z = 500 * (Math.random() - 0.5);
           // 必要に応じてスケールを調整
-          sprite.scale.set(3, 3, 3);
+          sprite.scale.set(10, 10, 10);
 
           scene.add(sprite);
         }
@@ -76,11 +76,15 @@
         head.position.set( 0, -30, 0 );
         scene.add( head );
 
-        // 平行光源1
+        /*// 平行光源1
         const directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(1, 1, 1);
         // シーンに追加
         scene.add(directionalLight1);
+        */
+         // 光源（環境光）
+         const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+        scene.add(ambientLight);
 
         tick();
 
