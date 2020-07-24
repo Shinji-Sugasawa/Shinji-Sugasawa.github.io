@@ -33,7 +33,7 @@
         camera.position.set(0, 0, -150);
         camera.rotation.x=1;
 
-        // マテリアル1を作成する
+        // マテリアルを作成する
         const material = new THREE.SpriteMaterial({
           map: new THREE.TextureLoader().load('snow1.png')
         });
@@ -60,6 +60,7 @@
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
+        //床を作成
         const floorgeometry = new THREE.PlaneGeometry( 500, 500, 10 );
         //const floormaterial = new THREE.MeshPhongMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
         const floor = new THREE.Mesh( floorgeometry, mat );
@@ -68,10 +69,10 @@
         scene.add( floor );
 
 
-
+        //雪だるまを作成
         const sphereGeometry = new THREE.SphereGeometry( 10, 32, 32 ); 
         //半径、垂直方向の分割数、水平方向の分割数
-        const sphereMaterial = new THREE. MeshPhongMaterial( {color: 0xFFFFFF} );
+        const sphereMaterial = new THREE. MeshStandardMaterial( {color: 0xFFFFFF} );
         const head = new THREE.Mesh( sphereGeometry, sphereMaterial );
         head.position.set( 0, -30, 0 );
         scene.add( head );
