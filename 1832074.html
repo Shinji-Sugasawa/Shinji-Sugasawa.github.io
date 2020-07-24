@@ -77,6 +77,14 @@
         head.position.set( 0, -30, 0 );
         scene.add( head );
 
+        //雪だるまを作成する
+        const sphere = new THREE.SphereGeometry( 10, 32, 32 ); 
+        //半径、垂直方向の分割数、水平方向の分割数
+        const sphere1 = new THREE. MeshStandardMaterial( {color: 0xFFFFFF} );
+        const body = new THREE.Mesh( sphere, sphere1 );
+        body.position.set( 0, -20, 0 );
+        scene.add( body );
+
 
          // 光源（環境光）
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
