@@ -85,11 +85,12 @@
         head.position.set( 0, -10, -10 );
         scene.add( head );
 
-        //マフラーを作成
-        var coneGeometry = new THREE.ConeGeometry(8, 1, 32);
+        //鼻を作成
+        var coneGeometry = new THREE.ConeGeometry(15, 3, 32);
+        //半径、高さ、底面の分割数
         var coneMaterial = new THREE.MeshPhongMaterial({color:0x00ff00});
         var cone = new THREE.Mesh(coneGeometry,coneMaterial);
-        cone.position.set(0,1.5,-10);
+        cone.position.set(0,-13,-10);
         scene.add(cone);
 
 
