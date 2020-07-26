@@ -89,6 +89,8 @@
         const sphere2 = new THREE. MeshStandardMaterial( {color: 0xFFFFFF} );
         const head = new THREE.Mesh( body2sphere, sphere2 );
         head.position.set( 0, -10, -10 );
+        head.castShadow = true; 
+        head.receiveShadow = true;
         scene.add( head );
 
          // 光源（環境光）
