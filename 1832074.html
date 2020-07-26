@@ -86,7 +86,7 @@
         scene.add( head );
 
         //マフラーを作成
-        var coneGeometry = new THREE.ConeGeometry(8, 1, 5);
+        var coneGeometry = new THREE.ConeGeometry(8, 1, 32);
         var coneMaterial = new THREE.MeshPhongMaterial({color:0x00ff00});
         var cone = new THREE.Mesh(coneGeometry,coneMaterial);
         cone.position.set(0,1.5,-10);
