@@ -85,6 +85,13 @@
         head.position.set( 0, -10, -10 );
         scene.add( head );
 
+        //マフラーを作成
+        var coneGeometry = new THREE.ConeGeometry(0.5, 1, 5);
+        var coneMaterial = new THREE.MeshPhongMaterial({color:0x00ff00});
+        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+        cone.position.set(2,1.5,-7);
+        scene.add(cone);
+
 
          // 光源（環境光）
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
