@@ -23,6 +23,9 @@
         renderer.setSize(width, height);
         //renderer.setClearColor(0xf9f9f9, 1.0);
 
+        // レンダラー：シャドウを有効にする
+        renderer.shadowMap.enabled = true;
+
         // シーンを作成
         const scene = new THREE.Scene();
         scene.fog = new THREE.Fog(0x000000, 200, 300);
@@ -75,6 +78,8 @@
         const sphereMaterial = new THREE. MeshStandardMaterial( {color: 0xFFFFFF} );
         const body2 = new THREE.Mesh( sphereGeometry, sphereMaterial );
         body2.position.set( 0, -30, -10 );
+        body2.castShadow = true; 
+        body2.receiveShadow = true;
         scene.add( body2 );
 
         //雪だるまを作成する
@@ -84,15 +89,6 @@
         const head = new THREE.Mesh( body2sphere, sphere2 );
         head.position.set( 0, -10, -10 );
         scene.add( head );
-
-        //鼻を作成
-        var coneGeometry = new THREE.ConeGeometry(15, 3, 32);
-        //半径、高さ、底面の分割数
-        var coneMaterial = new THREE.MeshPhongMaterial({color:0x00ff00});
-        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
-        cone.position.set(0,-13,-10);
-        scene.add(cone);
-
 
          // 光源（環境光）
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
