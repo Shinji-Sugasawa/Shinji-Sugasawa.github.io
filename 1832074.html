@@ -98,7 +98,8 @@
         //上の底面の半径、下の底面の半径、高さ、分割数
         const scarfMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
         const scarf = new THREE.Mesh( scarfGeometry, scarfMaterial );
-        scarf.castShadow = true; 
+        scarf.castShadow = true;  
+        scarf.receiveShadow = true;
         scarf.position.set( 0, -16.5, 0 );
 
 
