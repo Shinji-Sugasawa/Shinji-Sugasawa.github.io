@@ -130,11 +130,12 @@
 
         //ボタンを作成
         for (let i = 0; i < 3; i++) {
-        const buttonGeometry = new THREE.SphereGeometry( 100, 32, 32 ); 
+        const buttonGeometry = new THREE.SphereGeometry( 10, 32, 32 ); 
         //半径、垂直方向の分割数、水平方向の分割数
         const buttonMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
         const button = new THREE.Mesh( buttonGeometry, buttonMaterial );
         button.position.set(0,(-18 - (2*i)),2)
+        scene.add( button );
 
         }
 
