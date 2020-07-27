@@ -33,7 +33,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 60, 80);
+        camera.position.set(10, 60, 80);
         camera.lookAt(new THREE.Vector3(0, -10, 0));
 
         // マテリアルを作成する
@@ -118,6 +118,7 @@
         const ReyeMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
         const Reye = new THREE.Mesh( ReyeGeometry, ReyeMaterial );
         Reye.position.set( -3, -4, +8 );
+        Rhand.scale.set(1,1.2,1);
         scene.add( Reye );
 
         //左目を作成
@@ -130,7 +131,7 @@
 
         //ボタンを作成
         for (let i = 0; i < 3; i++) {
-        const buttonGeometry = new THREE.SphereGeometry( 10, 32, 32 ); 
+        const buttonGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
         //半径、垂直方向の分割数、水平方向の分割数
         const buttonMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
         const button = new THREE.Mesh( buttonGeometry, buttonMaterial );
