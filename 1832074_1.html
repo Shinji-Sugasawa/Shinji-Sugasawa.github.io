@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>期末課題</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script>
+  
+      // ページの読み込みを待つ
+      window.addEventListener('load', init);
+
+      function init() {
+        // サイズを指定
+        const width = 960;
+        const height = 540;
+
+        // レンダラーを作成
+        const renderer = new THREE.WebGLRenderer({
+          canvas: document.querySelector('#myCanvas')
+        });
+        //renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(width, height);
+        //renderer.setClearColor(0xf9f9f9, 1.0);
+
+        // レンダラー：シャドウを有効にする
+        renderer.shadowMap.enabled = true;
+
+        // シーンを作成
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.Fog(0x000000, 200, 300);
+
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        
+        /*OrbitControl用
+        // カメラの初期座標を設定
+        camera.position.set(0, -16, 100);
+        camera.lookAt(new THREE.Vector3(0, -10, 0));
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera);//*/
+
+
+        // マテリアルを作成する
+        const material = new THREE.SpriteMaterial({
+          map: new THREE.TextureLoader().load('snow1.png')
+        });
+        // フォグ（霞）を有効にする
+        material.fog = true;
+
+        // ビルボードを作成
+        for (let i = 0; i < 1500; i++) {
+            const sprite = new THREE.Sprite(material);
+          // ランダムな座標に配置
+          sprite.position.x = 500 * (Math.random() - 0.5);
+          sprite.position.y = 100 * Math.random() - 40;
+          sprite.position.z = 500 * (Math.random() - 0.5);
+          // 必要に応じてスケールを調整
+          sprite.scale.set(3, 3, 3);
+          scene.add(sprite);
+        }
+
+
+        //床にテクスチャ貼り付け
+        var textureLoader = new THREE.TextureLoader(); 
+        var texture = textureLoader.load("snowroad.jpg");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+
+        //床を作成
+        const floorgeometry = new THREE.PlaneGeometry( 500, 500, 10 );
+        //const floormaterial = new THREE.MeshPhongMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
+        const floor = new THREE.Mesh( floorgeometry, mat );
+        floor.position.y = -39; 
+        floor.rotation.x = -1.57;
+        floor.receiveShadow = true;
+        scene.add( floor );
+
+
+        //雪だるまを作成する
+        const snowmanGeometry = new THREE.SphereGeometry( 15, 32, 32 ); 
+        //半径、垂直方向の分割数、水平方向の分割数
+        const snowmanMaterial = new THREE. MeshStandardMaterial( {color: 0xFFFFFF} );
+        const body = new THREE.Mesh( snowmanGeometry, snowmanMaterial );
+        body.position.set( 0, -30, 0 );
+        body.castShadow = true; 
+        body.receiveShadow = true;
+        //scene.add( body );
+
+        //雪だるまを作成する
+        const SnowmanGeometry = new THREE.SphereGeometry( 10, 32, 32 ); 
+        //半径、垂直方向の分割数、水平方向の分割数
+        const SnowmanMaterial = new THREE. MeshStandardMaterial( {color: 0xFFFFFF} );
+        const head = new THREE.Mesh( SnowmanGeometry, SnowmanMaterial );
+        head.position.set( 0, -10, 0 );
+        head.castShadow = true; 
+        head.receiveShadow = true;
+        //scene.add( head );
+
+        //マフラー
+        const scarfGeometry = new THREE.CylinderGeometry( 9 ,9, 5, 32 );
+        //上の底面の半径、下の底面の半径、高さ、分割数
+        const scarfMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
+        const scarf = new THREE.Mesh( scarfGeometry, scarfMaterial );
+        scarf.castShadow = true;  
+        scarf.receiveShadow = true;
+        scarf.position.set( 0, -16.5, 0 );
+
+        //口を作成
+        const mouseGeometry = new THREE.ConeGeometry( 1, 10, 32 ); 
+        //半径、高さ、底面の分割数
+        const mouseMaterial = new THREE. MeshStandardMaterial( {color: 0xffaa00} );
+        const mouse = new THREE.Mesh( mouseGeometry, mouseMaterial );
+        mouse.position.set( 0, -6, +13 );
+        mouse.rotation.x = 1;
+        mouse.castShadow = true; 
+        mouse.receiveShadow = true;
+        //scene.add( mouse );
+
+        //右目を作成
+        const ReyeGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
+        //半径、垂直方向の分割数、水平方向の分割数
+        const ReyeMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
+        const Reye = new THREE.Mesh( ReyeGeometry, ReyeMaterial );
+        Reye.position.set( -3, -4, +8 );
+        //Reye.scale.set(1,1.2,1);
+        scene.add( Reye );
+
+        //左目を作成
+        const LeyeGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
+        //半径、垂直方向の分割数、水平方向の分割数
+        const LeyeMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
+        const Leye = new THREE.Mesh( LeyeGeometry, LeyeMaterial );
+        Leye.position.set( 3, -4, +8 );
+        //Leye.scale.set(1,1.2,1);
+        scene.add( Leye );
+
+        //ボタンを作成
+        for (let i = 0; i < 3; i++) {
+        const buttonGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
+        //半径、垂直方向の分割数、水平方向の分割数
+        const buttonMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
+        const button = new THREE.Mesh( buttonGeometry, buttonMaterial );
+        button.position.set( 0, ( -18 - ( 4*i )), .5 + ( 2*i ));
+        scene.add( button );
+        }
+
+
+        //雪だるま全体のオブジェクト
+        const snowman = new THREE.Group()
+        snowman.add(head);//頭を追加
+        snowman.add(body);//体を追加
+        snowman.add(scarf);//マフラーを追加
+        snowman.add(mouse);//口を追加
+        snowman.add(Leye);//左目を追加
+        snowman.add(Reye);//右目を追加
+        
+        //雪だるまの原点
+        snowman.position.set( 0, 0, -10 );
+        scene.add(snowman);
+
+
+         // 光源（環境光）
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+        scene.add(ambientLight);
+
+        // 照明を作成SpotLight( 色, 光の強さ, 距離, 照射角, ボケ具合, 減衰率)
+        const light = new THREE.SpotLight(0xffffff, 1, 300, Math.PI / 6, 0.5);
+        light.position.set( 15, 50, 55);
+
+
+        // ヘルパーを作成
+        /*const lightHelper = new THREE.SpotLightHelper(light);
+        scene.add(lightHelper);*/
+
+        // ライトに影を有効にする
+        light.castShadow = true;
+        scene.add(light);
+
+
+        tick();
+
+        // 毎フレーム時に実行されるループイベントです
+        function tick() {
+
+          
+          // カメラの自動移動
+          camera.position.x = 100 * Math.sin(Date.now() / 2000);
+          camera.position.z = 100 * Math.cos(Date.now() / 2000);
+          camera.position.y = 50 * Math.sin(Date.now() / 1000) + 60;
+          camera.lookAt(new THREE.Vector3(0, 0, 0));
+          
+
+          // レンダリング
+          renderer.render(scene, camera);
+          
+          // ヘルパーを更新
+          //lightHelper.update();
+          
+          requestAnimationFrame(tick);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+  </body>
+</html>
