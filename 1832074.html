@@ -93,6 +93,14 @@
         head.receiveShadow = true;
         scene.add( head );
 
+        //マフラー
+        var cylinderGeometry = new THREE.CylinderGeometry( 0.04, 0.04, 0.2, 120 );
+        var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
+        var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        cylinder.castShadow = true; 
+        cylinder.position.set( 0, -13, -10 );
+
+
          // 光源（環境光）
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
         scene.add(ambientLight);
