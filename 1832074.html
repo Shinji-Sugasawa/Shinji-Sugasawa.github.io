@@ -32,9 +32,14 @@
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
+        
+        ///*OrbitControl用
         // カメラの初期座標を設定
         camera.position.set(-30, 40, 30);
         camera.lookAt(new THREE.Vector3(0, -10, 0));
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera);//*/
+
 
         // マテリアルを作成する
         const material = new THREE.SpriteMaterial({
@@ -180,10 +185,10 @@
 
           
           // カメラの自動移動
-          camera.position.x = 100 * Math.sin(Date.now() / 2000);
+          /*camera.position.x = 100 * Math.sin(Date.now() / 2000);
           camera.position.z = 100 * Math.cos(Date.now() / 2000);
           camera.position.y = 50 * Math.sin(Date.now() / 1000) + 60;
-          camera.lookAt(new THREE.Vector3(0, 0, 0));
+          camera.lookAt(new THREE.Vector3(0, 0, 0));*/
           
 
           // レンダリング
