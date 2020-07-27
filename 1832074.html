@@ -86,8 +86,8 @@
         //雪だるまを作成する
         const SnowmanGeometry = new THREE.SphereGeometry( 10, 32, 32 ); 
         //半径、垂直方向の分割数、水平方向の分割数
-        const sphere2 = new THREE. MeshStandardMaterial( {color: 0xFFFFFF} );
-        const head = new THREE.Mesh( SnowmanGeometry, sphere2 );
+        const SnowmanMaterial = new THREE. MeshStandardMaterial( {color: 0xFFFFFF} );
+        const head = new THREE.Mesh( SnowmanGeometry, SnowmanMaterial );
         head.position.set( 0, -10, -10 );
         head.castShadow = true; 
         head.receiveShadow = true;
