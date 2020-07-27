@@ -94,12 +94,12 @@
         scene.add( head );
 
         //マフラー
-        var cylinderGeometry = new THREE.CylinderGeometry( 0.04, 0.04, 0.2, 120 );
+        const scarfGeometry = new THREE.CylinderGeometry( 5, 5, 3, 32 );
         //上の底面の半径、下の底面の半径、高さ、分割数
-        var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
-        var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        cylinder.castShadow = true; 
-        cylinder.position.set( 0, -13, -10 );
+        const scarfMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
+        const scarf = new THREE.Mesh( scarfGeometry, scarfMaterial );
+        scarf.castShadow = true; 
+        scarf.position.set( 0, -13, -10 );
 
 
          // 光源（環境光）
