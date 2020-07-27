@@ -103,11 +103,11 @@
         scarf.position.set( 0, -16.5, 0 );
 
         //口を作成
-        const mouseGeometry = new THREE.ConeGeometry( 10, 100, 32 ); 
+        const mouseGeometry = new THREE.ConeGeometry( 1, 10, 32 ); 
         //半径、高さ、底面の分割数
         const mouseMaterial = new THREE. MeshStandardMaterial( {color: 0xffff00} );
         const mouse = new THREE.Mesh( mouseGeometry, mouseMaterial );
-        mouse.position.set( 0, -10, +5 );
+        mouse.position.set( 0, -10, +15 );
         mouse.rotation.x = 1.5;
         mouse.castShadow = true; 
         mouse.receiveShadow = true;
