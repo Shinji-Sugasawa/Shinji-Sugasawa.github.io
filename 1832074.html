@@ -132,12 +132,12 @@
 
         //雪だるま全体のオブジェクト
         const snowman = new THREE.Group()
-        snowman.add(head);
-        snowman.add(body);
-        snowman.add(scarf);
-        snowman.add(mouse);
-        snowman.add(Leye);
-        snowman.add(Reye);
+        snowman.add(head);//頭を追加
+        snowman.add(body);//体を追加
+        snowman.add(scarf);//マフラーを追加
+        snowman.add(mouse);//口を追加
+        snowman.add(Leye);//左目を追加
+        snowman.add(Reye);//右目を追加
         
         //雪だるまの原点
         snowman.position.set( 0, 0, -10 );
