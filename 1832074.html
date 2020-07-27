@@ -33,8 +33,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, -150);
-        camera.rotation.x=1;
+        camera.position.set(0, 60, 80);
 
         // マテリアルを作成する
         const material = new THREE.SpriteMaterial({
@@ -118,7 +117,7 @@
         //半径、垂直方向の分割数、水平方向の分割数
         const ReyeMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
         const Reye = new THREE.Mesh( ReyeGeometry, ReyeMaterial );
-        Reye.position.set( -3, -4, +9 );
+        Reye.position.set( -3, -4, +8 );
         scene.add( Reye );
 
         //左目を作成
