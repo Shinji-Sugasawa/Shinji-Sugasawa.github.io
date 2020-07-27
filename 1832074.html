@@ -114,19 +114,19 @@
         //scene.add( mouse );
 
         //右目を作成
-        const ReyeGeometry = new THREE.SphereGeometry( 5, 32, 32 ); 
+        const ReyeGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
         //半径、垂直方向の分割数、水平方向の分割数
         const ReyeMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
         const Reye = new THREE.Mesh( ReyeGeometry, ReyeMaterial );
-        Reye.position.set( -2, -4, +12 );
+        Reye.position.set( -2, -4, +10 );
         scene.add( Reye );
 
         //左目を作成
-        const LeyeGeometry = new THREE.SphereGeometry( 5, 32, 32 ); 
+        const LeyeGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
         //半径、垂直方向の分割数、水平方向の分割数
         const LeyeMaterial = new THREE. MeshStandardMaterial( {color: 0x000000} );
         const Leye = new THREE.Mesh( LeyeGeometry, LeyeMaterial );
-        Leye.position.set( 2, -4, +12 );
+        Leye.position.set( 2, -4, +10 );
         scene.add( Leye );
 
 
