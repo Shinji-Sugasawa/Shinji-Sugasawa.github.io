@@ -62,13 +62,13 @@
         }
 
 
-        //床にテクスチャ貼り付け
+        //雪道にテクスチャ貼り付け
         var textureLoader = new THREE.TextureLoader(); 
         var texture = textureLoader.load("snowroad.jpg");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
-        //床を作成
+        //雪道を作成
         const floorgeometry = new THREE.PlaneGeometry( 500, 500, 10 );
         //const floormaterial = new THREE.MeshPhongMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
         const floor = new THREE.Mesh( floorgeometry, mat );
