@@ -125,6 +125,8 @@
         const Reye = new THREE.Mesh( ReyeGeometry, ReyeMaterial );
         Reye.position.set( -3, -4, +8 );
         Reye.scale.set(1,2,1);
+        Reye.castShadow = true; 
+        Reye.receiveShadow = true;
         Reye.rotation.x = -0.52;
         scene.add( Reye );
 
@@ -135,6 +137,8 @@
         const Leye = new THREE.Mesh( LeyeGeometry, LeyeMaterial );
         Leye.position.set( 3, -4, +8 );
         Leye.scale.set(1,2,1);
+        Leye.castShadow = true; 
+        mouse.receiveShadow = true;
         Leye.rotation.x = -0.52;
         scene.add( Leye );
 
