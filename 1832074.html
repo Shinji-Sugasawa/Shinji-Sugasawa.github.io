@@ -148,20 +148,15 @@
         scene.add( button );
         }
 
-        //雪だるま全体のオブジェクト
-        const snowhead = new THREE.Group()
-        snowman.add(head);//頭を追加
-        snowman.add(mouse);//口を追加
-        snowman.add(Leye);//左目を追加
-        snowman.add(Reye);//右目を追加
-        //雪だるまの原点
-        snowhead.position.set( 0, 0, -10 );
-        scene.add(snowhead);
 
         //雪だるま全体のオブジェクト
         const snowman = new THREE.Group()
+        snowman.add(head);//頭を追加
         snowman.add(body);//体を追加
         snowman.add(scarf);//マフラーを追加
+        snowman.add(mouse);//口を追加
+        snowman.add(Leye);//左目を追加
+        snowman.add(Reye);//右目を追加
         
         //雪だるまの原点
         snowman.position.set( 0, 0, -10 );
@@ -198,6 +193,5 @@
   </head>
   <body>
     <canvas id="myCanvas"></canvas>
-    <h1><a href="https://Shinji-Sugasawa.github.io/">戻る</a><br>
   </body>
 </html>
