@@ -29,7 +29,7 @@
 
         // シーンを作成
         const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x000000, 200, 300);
+        scene.fog = new THREE.Fog(0x000000, 200, 3000);
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
@@ -50,12 +50,12 @@
         material.fog = true;
 
         // ビルボードを作成
-        for (let i = 0; i <10000; i++) {
+        for (let i = 0; i <100000; i++) {
             const snow = new THREE.Sprite(material);
           // ランダムな座標に配置
-          snow.position.x = 5000 * (Math.random() - 0.5);
+          snow.position.x = 1000 * (Math.random() - 0.5);
           snow.position.y = 1000 * Math.random() - 40;
-          snow.position.z = 5000 * (Math.random() - 0.5);
+          snow.position.z = 1000 * (Math.random() - 0.5);
           // 必要に応じてスケールを調整
           snow.scale.set(3, 3, 3);
           scene.add(snow);
