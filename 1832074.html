@@ -50,12 +50,12 @@
         material.fog = true;
 
         // ビルボードを作成
-        for (let i = 0; i < 1500; i++) {
+        for (let i = 0; i <10000; i++) {
             const snow = new THREE.Sprite(material);
           // ランダムな座標に配置
-          snow.position.x = 500 * (Math.random() - 0.5);
-          snow.position.y = 100 * Math.random() - 40;
-          snow.position.z = 500 * (Math.random() - 0.5);
+          snow.position.x = 5000 * (Math.random() - 0.5);
+          snow.position.y = 1000 * Math.random() - 40;
+          snow.position.z = 5000 * (Math.random() - 0.5);
           // 必要に応じてスケールを調整
           snow.scale.set(3, 3, 3);
           scene.add(snow);
